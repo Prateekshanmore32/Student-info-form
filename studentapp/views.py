@@ -6,11 +6,10 @@ def home(request):
     return render(request,"index.htm")
 
 def student_data(request):
-    # print(request.POST)
-    # print("Hello")
-    print(request.POST.get('qualification'))
     try:
         if request.method == "POST":
+            mylist = zip(request.POST.getlist('qualification'),request.POST.getlist('university'),request.POST.getlist('insti'),request.POST.getlist('yop'),request.POST.getlist('percentage'))
+
             values ={
                 "name" : request.POST.get('name'),
                 "address":request.POST.get('address'),
@@ -18,11 +17,7 @@ def student_data(request):
                 "email":request.POST.get('email'),
                 "age":int(request.POST.get('age')),
                 "education":request.POST.get('education'),
-                "qualification":request.POST.getlist('qualification'),
-                "university":request.POST.getlist('university'),
-                "insti":request.POST.getlist('insti'),
-                "yop":request.POST.getlist('yop'),
-                "percentage":request.POST.getlist('percentage'),
+                "mylist":mylist,
             }
             student_doc = request.file('document')
             
@@ -31,5 +26,4 @@ def student_data(request):
         
     except:
         pass
-    print(values["qualification"])
     return render(request,"student-info.htm",values)

@@ -31,27 +31,23 @@
             <th>Percentage</th>
         </tr>
         
-        {%  for i in '1234'|make_list  %}
+        {% for item1, item2, item3, item4, item5 in mylist %}
             
             <tr>
-                <td>{{ forloop.counter }}</td>
-                <td> a</td>
-                <td> b</td>
-                <td> a</td>
-                <td> a</td>
-                <td> a</td>
-                <!-- fill up the data - loop through the lists -->
+                <td>{{ forloop.counter}}</td>
+                <td> {{item1}}</td>
+                <td> {{item2}}</td>
+                <td> {{item3}}</td>
+                <td> {{item4}}</td>
+                <td> {{item5}}</td>
             </tr>
             
         {%  endfor %}
-        
-        <!-- {% for q in qualification %}
-            <tr>
-                <td>{{q}}</td>
-            </tr>
-        {% endfor %} -->
 
     </table>
     <button>Download/Print</button>
 </body>
 </html>
+
+
+
