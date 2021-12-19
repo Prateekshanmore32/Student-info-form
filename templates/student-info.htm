@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Student Form</title>
+    
 </head>
 <body>
     <h1>Student Information Form</h1>
@@ -14,5 +15,43 @@
     <p>Email: {{email}}</p><br>
     <p>Age: {{age}}</p>
     <p>Education: {{education}}</p>
+    <p>{{qualification.0}}</p>
+    <p>{{university}}</p>
+    <p>{{insti}}</p>
+    <p>{{yop}}</p>
+    <p>{{percentage}}</p>
+
+    <table border="1" cellspacing="0">
+        <tr>
+            <th>Sr.No.</th>
+            <th>Qualification</th>
+            <th>University</th>
+            <th>Institution</th>
+            <th>Year of passing</th>
+            <th>Percentage</th>
+        </tr>
+        
+        {%  for i in '1234'|make_list  %}
+            
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td> a</td>
+                <td> b</td>
+                <td> a</td>
+                <td> a</td>
+                <td> a</td>
+                <!-- fill up the data - loop through the lists -->
+            </tr>
+            
+        {%  endfor %}
+        
+        <!-- {% for q in qualification %}
+            <tr>
+                <td>{{q}}</td>
+            </tr>
+        {% endfor %} -->
+
+    </table>
+    <button>Download/Print</button>
 </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Student Form</title>
 </head>
 <body>
     <h1>Student Information Form</h1> 
@@ -34,10 +34,48 @@
     <label for="education">Education:</label>
     <input name ="education"type="text">
     <br>
+
+    <label for="upload">Upload Document: </label>
+    <input type="file" name="document">
+    <br>
     
-    <button>Submit</button>
-    </form>
-     
+   
     
+    <p><b>Eduction Qualification:<b></p><br>
+    <table border="1" cellspacing="0">
+        <tr>
+            <th>Sr.No.</th>
+            <th>Qualification</th>
+            <th>University</th>
+            <th>Institution</th>
+            <th>Year of passing</th>
+            <th>Percentage</th>
+        </tr>
+        {% for i in '1234'|make_list %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td><input type="text" name="qualification"></td>
+                <td><input type="text" name="university"></td>
+                <td><input type="text" name="insti" ></td>
+                <td><input type="text" name="yop"></td>
+                <td><input type="text" name="percentage"></td>
+            </tr>
+        {%  endfor %}
+        <!-- <tr>
+            <td>1.</td>
+            <td><input type="text" name="qualification"></td>
+            <td><input type="text" name="university"></td>
+            <td><input type="text" name="insti" ></td>
+            <td><input type="text" name="yop"></td>
+            <td><input type="text" name="percentage"></td>
+        </tr> -->
+
+    </table>
+    <button type="submit">Submit</button>
+</form>
 </body>
 </html>
+
+
+
+
